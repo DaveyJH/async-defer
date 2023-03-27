@@ -4,4 +4,4 @@ function createUl3() {
   document.querySelector("ol").appendChild(ul);
 }
 
-createul();
+createUl3();

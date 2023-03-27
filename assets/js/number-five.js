@@ -4,4 +4,7 @@ function createUl5() {
   document.querySelector("ol").appendChild(ul);
 }
 
+// an error in the JavaScript
+oops
+
 createUl5();

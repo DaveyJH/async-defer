@@ -5,22 +5,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/number-one.js"></script>
-  <!-- <script async src="assets/js/number-two.js"></script>
+  <script async src="assets/js/number-two.js"></script>
   <script async src="assets/js/number-three.js"></script>
-  <script async src="assets/js/number-four.js"></script> -->
+  <script async src="assets/js/number-four.js"></script>
+  <script src="assets/js/number-five.js"></script>
+  <script src="assets/js/number-six.js"></script>
   <title>Script Timing Test</title>
 </head>
 
 <body>
   <h1>Script Timing Test</h1>
-  <p>This text is written in the HTML file. The order list below is empty until
+  <p>
+    This text is written in the HTML file. The order list below is empty until
     it is populated by JavaScript. Changing the defer / async methods and
     positions will cause the results to appear in different orders. There is no
-  difference between the scripts.</p>
-  <p>We have added some images below to add a little to the loading time of the page.
+    difference between the scripts.
+  </p>
+  <p>
+    We have added some images below to add a little to the loading time of the page.
     Try performing a cache refresh a number of times and see if the order of
-    the list items remains the same.</p>
+    the list items remains the same.
+  </p>
   <img src="https://dummyimage.com/50x50/4a4f4f/efb820.png" alt="">
   <img src="https://dummyimage.com/50x50/4a4f4f/23bbbb.png" alt="">
   <img src="https://dummyimage.com/50x50/4a4f4f/e84610.png" alt="">
@@ -48,7 +55,24 @@
   <ol>
 
   </ol>
-  <script src="assets/js/number-five.js"></script>
+
+  <p>
+    You should find that <code>async</code> scripts can appear at any time, or not at all.
+    This is because the <code>ol</code> element has not always been created by the time the
+    script is trying to call upon it.
+  </p>
+  <p>Deferred scripts will load after the DOM, as will scripts placed at the bottom
+    of the <code>body</code> element. If a script at the bottom of the <code>body</code> has no
+    attribute, it will load before any deferred scripts. It is more common to see
+    the script placed in the <code>head</code> with <code>defer</code> in modern development.
+  </p>
+  <p>Combining <code>defer</code> and <code>async</code> ensures the script loads after the DOM, but will
+    not maintain the order in which they load. This may be preferred in some
+    situations. The order of the attributes makes no difference to the timing,
+    <code>async defer</code> is the same as <code>defer async</code>.
+  </p>
+
+  <script src="assets/js/number-seven.js"></script>
 </body>
 
 </html>
